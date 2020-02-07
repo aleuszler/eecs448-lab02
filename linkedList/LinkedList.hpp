@@ -50,7 +50,7 @@ bool LinkedList<T>::search(T value) const
 	{
 		if(temp->getValue()==value)
 		{
-			isFound==true;
+			isFound=true;
 		}
 		else{
 			temp=temp->getNext();
