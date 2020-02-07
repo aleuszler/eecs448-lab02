@@ -117,12 +117,17 @@ bool LinkedList<T>::removeBack()
 
 	if(isEmpty())
 	{
-		return(isRemoved);
+		return(isRemoved=true);
+	}
+	if(m_size==1)
+	{
+		delete m_front;
+		m_size--;
 	}
 	if(!isEmpty()||lastNode->getNext()!=0)
 	{
 		lastNode=m_front;
-		m_front=m_front->getNext();
+		m_front=lastNode->getNext();
 		delete lastNode;
 		m_size--;
 	}
